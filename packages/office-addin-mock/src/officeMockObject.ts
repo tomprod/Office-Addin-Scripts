@@ -161,9 +161,9 @@ export class OfficeMockObject {
           const composedProperty: string[] =
             property.parseObjectPropertyIntoArray(propertyValue);
           if (composedProperty.length !== 0) {
-            composedProperties = composedProperties.concat(
-              propertyName + "/" + composedProperty
-            );
+            composedProperties.map((c) => {
+              c = c.concat(propertyName + "/" + composedProperty);
+            });
           }
         } else if (propertyValue) {
           composedProperties = composedProperties.concat(propertyName);
